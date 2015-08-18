@@ -30,20 +30,7 @@ import java.util.logging.Logger;
 import com.neophob.sematrix.core.glue.Collector;
 import com.neophob.sematrix.core.glue.FileUtils;
 import com.neophob.sematrix.core.glue.Shuffler;
-import com.neophob.sematrix.core.output.ArtnetDevice;
-import com.neophob.sematrix.core.output.E1_31Device;
-import com.neophob.sematrix.core.output.MiniDmxDevice;
-import com.neophob.sematrix.core.output.NullDevice;
-import com.neophob.sematrix.core.output.Output;
-import com.neophob.sematrix.core.output.OutputDeviceEnum;
-import com.neophob.sematrix.core.output.PixelInvadersNetDevice;
-import com.neophob.sematrix.core.output.PixelInvadersSerialDevice;
-import com.neophob.sematrix.core.output.RainbowduinoV2Device;
-import com.neophob.sematrix.core.output.RainbowduinoV3Device;
-import com.neophob.sematrix.core.output.StealthDevice;
-import com.neophob.sematrix.core.output.Tpm2;
-import com.neophob.sematrix.core.output.Tpm2Net;
-import com.neophob.sematrix.core.output.UdpDevice;
+import com.neophob.sematrix.core.output.*;
 import com.neophob.sematrix.core.properties.ApplicationConfigurationHelper;
 
 /**
@@ -136,6 +123,9 @@ public abstract class InitApplication {
 			case UDP:
 				output = new UdpDevice(applicationConfig);
 				break;
+            case OpenPixelControl:
+                output = new OpenPixelControlDevice(applicationConfig);
+                break;
 			case TPM2:
 				output = new Tpm2(applicationConfig);
 				break;

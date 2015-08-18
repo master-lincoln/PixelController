@@ -52,6 +52,9 @@ public enum OutputDeviceEnum {
 
 	/** The UDP. */
 	UDP(UdpDevice.class, true),
+    
+    /** The Open Pixel Control */
+    OpenPixelControl(OpenPixelControlDevice.class, true),
 	
 	PIXELINVADERS_NET(PixelInvadersNetDevice.class, true),
 

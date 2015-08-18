@@ -61,6 +61,7 @@ PixelController supports different (LED) matrix hardware devices/controller:
 * MiniDmx Devices (like the SEDU board of [http://www.led-studien.de](http://www.led-studien.de))
 * Element Labs Stealth LED panel. No longer in production ([](http://cled.barcousa.com/support/STEALTH/STEALTH_Users_Guide.pdf))
 * Generic UDP Devices (for example Raspberry Pi, check out the PixelPi Software)
+* (Open Pixel Control)[http://openpixelcontrol.org/] devices (like (fadecandy)[https://github.com/scanlime/fadecandy])
 * TPM2 Serial devices (see [http://www.led-studien.de](http://www.led-studien.de) for more information)
 * TPM2 Net devices (see [http://www.led-studien.de](http://www.led-studien.de) for more information)
 * E1.31 devices (see [http://www.opendmx.net/index.php/E1.31](http://www.opendmx.net/index.php/E1.31))

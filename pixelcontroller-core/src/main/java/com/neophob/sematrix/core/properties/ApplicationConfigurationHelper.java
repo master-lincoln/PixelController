@@ -134,7 +134,8 @@ public class ApplicationConfigurationHelper {
         int miniDmxDevices = parseMiniDmxDevices();
         int tpm2Devices = parseTpm2Devices();
         int tpm2NetDevices = parseTpm2NetDevices();                
-        int udpDevices = parseUdpDevices();       
+        int udpDevices = parseUdpDevices();
+        int opcDevices = parseOpcDevices();
         //track how many output systems are enabled
         int enabledOutputs = 0;
 
@@ -206,7 +207,13 @@ public class ApplicationConfigurationHelper {
             totalDevices = udpDevices;
             LOG.log(Level.INFO, "found UDP device: "+totalDevices);
             this.outputDeviceEnum = OutputDeviceEnum.UDP;
-        } 
+        }
+        if (opcDevices > 0) {
+            enabledOutputs++;
+            totalDevices = opcDevices;
+            LOG.log(Level.INFO, "found Open Pixel Control device: "+totalDevices);
+            this.outputDeviceEnum = OutputDeviceEnum.OpenPixelControl;
+        }
         if (nullDevices > 0) {
             //enable null output only if configured AND no other output is enabled.
         	if (enabledOutputs==0) {
@@ -696,6 +703,24 @@ public class ApplicationConfigurationHelper {
     }
 
     /**
+     * get configured udp ip.
+     *
+     * @return the udp ip
+     */
+    public String getOpcIp() {
+        return config.getProperty(ConfigConstant.OPC_IP);
+    }
+
+    /**
+     * get configured udp port.
+     *
+     * @return the udp port
+     */
+    public int getOpcPort() {
+        return parseInt(ConfigConstant.OPC_PORT, 7890);
+    }
+
+    /**
      * get configured e131 ip.
      *
      * @return the e131 controller ip
@@ -886,6 +911,22 @@ public class ApplicationConfigurationHelper {
      */
     private int parseUdpDevices() {    	    	
         if (StringUtils.length(getUdpIp())>6 && parseOutputXResolution()>0 && parseOutputYResolution()>0) {
+            this.devicesInRow1=1;
+            this.devicesInRow2=0;
+            this.deviceXResolution = parseOutputXResolution();
+            this.deviceYResolution = parseOutputYResolution();
+            return 1;
+        }
+
+        return 0;
+    }
+
+    /**
+     *
+     * @return
+     */
+    private int parseOpcDevices() {
+        if (StringUtils.length(getOpcIp())>6 && parseOutputXResolution()>0 && parseOutputYResolution()>0) {
             this.devicesInRow1=1;
             this.devicesInRow2=0;
             this.deviceXResolution = parseOutputXResolution();
