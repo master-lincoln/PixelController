@@ -345,7 +345,7 @@ pages = [
 
 /* -- multibutton -- */
 {
-     "name" : "currentPreset",
+     "name" : "changePreset",
      "type" : "MultiButton",
      "bounds": [0,.1,.85,.8],
      "rows" : 12, "columns" : 8,
