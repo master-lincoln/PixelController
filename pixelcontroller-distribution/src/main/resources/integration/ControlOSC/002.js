@@ -252,7 +252,7 @@ pages = [
 },
 /* -- RANDOM PRESET Buttons */
 {
-     "name": "fireRandomPresentButton",
+     "name": "fireRandomPresetButton",
      "type": "Button",
      "x":.5, "y":.66,
      "width":.145, "height":.08,
@@ -261,7 +261,7 @@ pages = [
      "stroke": "#7e4000",
      "label": "RANDOM PRESET",
      "labelSize": "18",
-	 "oninit": "fireRandomPresentButton.fillDiv.style.borderWidth = '2px';",    
+	 "oninit": "fireRandomPresetButton.fillDiv.style.borderWidth = '2px';",    
 },
 /* -- Visual 1 to ALL OUTPUTS Button */
 {
@@ -345,7 +345,7 @@ pages = [
 
 /* -- multibutton -- */
 {
-     "name" : "currentPresent",
+     "name" : "currentPreset",
      "type" : "MultiButton",
      "bounds": [0,.1,.85,.8],
      "rows" : 12, "columns" : 8,
@@ -370,7 +370,7 @@ pages = [
 
 /* -- LOAD -- */
 {
-     "name" : "loadPresent",
+     "name" : "loadPreset",
      "type" : "Button",
      "bounds": [.88,.1,.1,.1],
      "mode" : "momentary",
@@ -378,11 +378,11 @@ pages = [
      "stroke": "#7e4000",
      "label": "Load",
      "labelSize": "18",
-     "oninit": "loadPresent.fillDiv.style.borderWidth = '2px';",
+     "oninit": "loadPreset.fillDiv.style.borderWidth = '2px';",
 },
 /* -- SAVE -- */
 {
-     "name" : "savePresent",
+     "name" : "savePreset",
      "type" : "Button",
      "bounds": [.88,.2,.1,.1],
      "mode" : "momentary",
@@ -390,7 +390,7 @@ pages = [
      "stroke": "#7e4000",
      "label": "Save",
      "labelSize": "18",     
-     "oninit": "savePresent.fillDiv.style.borderWidth = '2px';",
+     "oninit": "savePreset.fillDiv.style.borderWidth = '2px';",
 },
 
 ],
